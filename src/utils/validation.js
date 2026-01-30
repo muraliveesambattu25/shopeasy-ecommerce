@@ -11,11 +11,12 @@ export const validateEmail = (email) => {
 
 export const validatePassword = (password) => {
   if (!password) return 'Password is required';
-  if (password.length < 8) return 'Password must be 8+ characters with uppercase, lowercase, number and special character';
+  if (password.length < 10) return 'Password must be at least 10 characters';
   if (!/[A-Z]/.test(password)) return 'Password must contain at least one uppercase letter';
   if (!/[a-z]/.test(password)) return 'Password must contain at least one lowercase letter';
-  if (!/\d/.test(password)) return 'Password must contain at least one number';
-  if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) return 'Password must contain at least one special character';
+  const digitCount = (password.match(/\d/g) || []).length;
+  if (digitCount < 2) return 'Password must contain at least two numbers';
+  if (!/[!@#$%^&*(),.?":{}|<>_\-+=[\]\\/]/.test(password)) return 'Password must contain at least one special character (!@#$%^&* etc.)';
   return null;
 };
 

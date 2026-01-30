@@ -43,8 +43,8 @@ Open [http://localhost:5173](http://localhost:5173).
 
 | Email             | Password  |
 |------------------|-----------|
-| test@example.com | Test@123  |
-| demo@example.com | Demo@123  |
+| test@example.com | TestUser@12 |
+| demo@example.com | DemoUser@12 |
 
 ## Features
 
